@@ -2,35 +2,35 @@ import { myQuestions } from "./quizQuestions.js"
 
 export default function createQuiz() {
     // quiz.draw() : draw the quiz
-    // Fetch the HTML quiz wrapper
-   let quizSection = document.getElementById("#quiz");
+    // Fetch the HTML quiz elements
+   let quizSection = document.getElementById("quiz");
    let quizDiv = document.createElement("div");
    for(let i = 0; i < myQuestions.length; i++) {// Loop through all the questions
-      let quizContent = document.createElement("div"); // Create all the necessary HTML elements 
-      let title = document.getElementsByTagName("h1")
       let question = document.createElement("h2");
-      let options = document.createElement("input");
-      let answer = document.createElement("summary") //Should not be revealed until after choice made or end of quiz
-      let submitButton = document.getElementById("#submit"); //Append later on
+      let options = document.createElement("input"); //Get element in quizQuestions?
+      let resultsContainer = document.getElementById("results"); //Should not be revealed until after choice made or end of quiz
+      let submitButton = document.getElementById("submit");
+      submitButton.addEventListener('click'); //Append later on?show results?. 2 seperate lines?
 
-      quizSection.className = "quiz";
-
+      quizDiv.className = "quiz1"; //CSS
+      
+      
       question.textContent = myQuestions[i].question; //checks array index for all questions.
       question.alt =myQuestions[i].question; //accessible read out question?
-      
       options.value = myQuestions[i].options; //array 2 index loop
-      options.type ="radio";
-      
-      answer = myQuestions[i].answer;
+      options.type ="radio"; //button
+      resultsContainer = myQuestions[i].answer;
+ 
+     //Text Node of what? to put text inside the element
+     
+    //   quizDiv.appendChild(question); //append children to parent element
+    //   quizDiv.appendChild(options);
+    // //   quizContent.appendChild(answer) //to be revealed after
+    //   quizDiv.appendChild();
 
-      quizContent.appendChild(question);
-      quizContent.appendChild(options);
-    //   quizContent.appendChild(answer) //to be revealed after
-      quizContent.appendChild(submitButton);
-
-      quizSection.appendChild(
-        quizDiv.appendChild(quizContent)
-      );
+    //   quizSection.appendChild()
+    //     quizDiv.appendChild()
+    //   );
         
     } 
     return quizSection;
