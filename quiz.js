@@ -1,18 +1,32 @@
-function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
+import {myQuestions} from "./quizQuestions.js";
 
-	function showQuestions(questions, quizContainer){
-		// code will go here
+var myButton = document.getElementById("button");
+myButton.addEventListener("click",()=>{
+	console.log("clicked"); 
+	//Question
+	//Get Question
+	const answer1 = document.querySelector('input[name="group1"]:checked')
+	const pickedOption = answer1.nextElementSibling.textContent;
+
+	const options = myQuestions[0].options;
+	const correctAnswerIndex = myQuestions[0].answer;
+	if (pickedOption===options[correctAnswerIndex]){
+	console.log("Well done")
+	} else{
+		console.error("You are wrong!")
 	}
 
-	function showResults(questions, quizContainer, resultsContainer){
-		// code will go here
-	}
 
-	// show the questions
-	showQuestions(questions, quizContainer);
 
-	// when user clicks submit, show results
-	submitButton.onclick = function(){
-		showResults(questions, quizContainer, resultsContainer);
-	}
-}
+});
+
+
+
+
+
+
+// function myFunction() {
+// console.log("clicked");
+//   }	
+
+console.log(myQuestions);

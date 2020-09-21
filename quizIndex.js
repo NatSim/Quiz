@@ -11,7 +11,7 @@ export default function createQuiz() {
       let resultsContainer = document.getElementById("results"); //Should not be revealed until after choice made or end of quiz
       let submitButton = document.getElementById("submit");
       submitButton.addEventListener('click'); //Append later on?show results?. 2 seperate lines?
-
+      
       quizDiv.className = "quiz1"; //CSS
       
       
