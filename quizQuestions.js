@@ -19,3 +19,4 @@ export const myQuestions = [    //Create quiz:array of objects & array for optio
 	}
 ];
 
+console.log(myQuestions);
