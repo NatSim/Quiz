@@ -15,18 +15,8 @@ myButton.addEventListener("click",()=>{
 	} else{
 	alert("Wrong Answer!")
 	}
-    // // //Question2
-	// const answer2 = document.querySelector('input[name="group2"]:checked')
-	// const pickedOption2 = answer2; //?
-
-	// const options2 = myQuestions[2].answer;
-	// const correctAnswerIndex2 = myQuestions[2].answer;
-	// if (pickedOption2===options2[correctAnswerIndex2]){
-	// 	console.log("Well done!")
-	// } else{
-	// 	console.log("Wrong Answer!")
-	// }
-	
+	// // //Question2
+			
 
 
 	
@@ -38,4 +28,4 @@ myButton.addEventListener("click",()=>{
 });
 
 
-console.log(myQuestions);
+console.log(myQuestions); 
