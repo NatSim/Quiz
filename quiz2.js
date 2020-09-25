@@ -18,8 +18,15 @@ document.getElementById("quiz");
 quiz.appendChild(imageContainer);
 quiz.appendChild(newImage);
 
+//Manipulate Elements in DOM
+let image1 = document.getElementsByClassName(".imagediv");
 
-console.dir(imageContainer);
+//Manipulate Questions Elements in DOM
+let questionColor = document.querySelectorAll(".question");
+
+for(let i = 0; i < questionColor.length; i++) {
+    let element = questionColor[i];
+}
 
 //Question input function
 function check() {
