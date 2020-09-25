@@ -5,7 +5,7 @@ titleParent.appendChild(quizTitle);
 quizTitle.innerHTML= "Music Quiz";
 titleParent.insertBefore(quizTitle,titleParent.getElementsByTagName("div")[0]);
 
-//Add Image to each question
+//Add Image DOM
 let imageContainer = document.createElement("div");
 let newImage       = document.createElement("img");
 imageContainer.className = "imagediv";
