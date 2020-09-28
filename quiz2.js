@@ -15,13 +15,13 @@ newImage.setAttribute("src","./images/steelpan.jpg")
 imageContainer.appendChild(newImage);
 
 document.getElementById("quiz");
-quiz.appendChild(imageContainer);
+quiz.appendChild(imageContainer);  //Move image higher
 quiz.appendChild(newImage);
 
-//Manipulate Elements in DOM
+//Manipulate Elements in DOM(image size)
 let image1 = document.getElementsByClassName(".imagediv");
 
-//Manipulate Questions Elements in DOM
+//Manipulate Questions Elements in DOM(Style)
 let questionColor = document.querySelectorAll(".question");
 
 for(let i = 0; i < questionColor.length; i++) {
@@ -40,6 +40,7 @@ function check() {
     var quiz=document.getElementById("quiz"); //Get Element-User clicks
     if(q1=="Kygo"){
         c++
+        console.log("Score:")
     }
     if(q2=="Tarrus"){
         c++
