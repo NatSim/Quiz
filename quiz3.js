@@ -25,7 +25,7 @@ function createChoices(choices, index) {
     input.type = "radio";
     input.name = "question" + index;
 
-    answer.appendChild(input); //(appended item)
+    const quizQuestionMark = answer.appendChild(input); //(appended item)
 
     const answerText = document.createTextNode(choices[i]);
     answer.appendChild(answerText);
@@ -35,7 +35,6 @@ function createChoices(choices, index) {
 
   quiz.appendChild(answerContainer);
 }
-
 function createQuiz() {
   for (let i = 0; i < quizQuestions.length; i++) {
     const obj = quizQuestions[i];
@@ -52,32 +51,39 @@ function createQuiz() {
     quiz.appendChild(container);
     // console.log(obj.question);
     createChoices(obj.choices, i); //each creatQuiz iteration= createChoices is also called
-  }
 
-  //Question Mark
-  const obj2 = quizQuestions.question;
+    // addQMarks();
+  }
+}
+
+function addQMarks() {
   //Question mark container element
-  const qmarkContainer = document.createElement("div");
   for (let i = 0; i < quizQuestions.length; i++) {
+    const obj2 = quizQuestions[0].question; //add new for loop qq.length
+
+    const qmarkContainer = document.createElement("div");
     const qmark = document.createElement("p");
     const qmarkText = document.createTextNode("?");
 
     qmark.appendChild(qmarkText);
     qmarkContainer.appendChild(qmark);
+
+    const addElementQ = document.getElementsByTagName("$0");
+
+   quiz.appendChild(qmarkContainer);
+
+   console.log(obj2[0])
   }
 
-  quiz.appendChild(qmarkContainer);
+  
 
-  // quizQuestions[0].question.appendChild(qmarkContainer);
-}
-
-// quiz.appendChild(qmarkContainer);
+  
 
 console.log("hello");
 
 createTitle();
 createQuiz();
-// addQMarks();
+addQMarks();
 
 // function addQMarks(question, index) {
 //   //Question Mark
