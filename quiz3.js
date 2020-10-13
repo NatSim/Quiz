@@ -70,31 +70,14 @@ function addQMarks() {
 
     const addElementQ = document.getElementsByTagName("$0");
 
-   quiz.appendChild(qmarkContainer);
+    quiz.appendChild(qmarkContainer);
 
-   console.log(obj2[0])
+    console.log(obj2[i]);
   }
-
-  
-
-  
+}
 
 console.log("hello");
 
 createTitle();
 createQuiz();
 addQMarks();
-
-// function addQMarks(question, index) {
-//   //Question Mark
-//   const obj2 = quizQuestions.question;
-//   //Question mark container element
-//   const qmarkContainer = document.createElement("div");
-//   for (let i = 0; i < quizQuestions.length; i++) {
-//     const qmark = document.createElement("p");
-//     const qmarkText = document.createTextNode("?");
-//     const getQuestion = document.createTextNode[0].question;
-
-//     qmark.appendChild(qmarkText);
-//     qmarkContainer.appendChild(qmark);
-//     [0].question.append(qmarkContainer);
