@@ -51,8 +51,44 @@ function createQuiz() {
     // const quiz              = document.getElementById("quiz"); already got id earlier?
     quiz.appendChild(container);
     // console.log(obj.question);
-    createChoices(obj.choices, i);
+    createChoices(obj.choices, i); //each creatQuiz iteration= createChoices is also called
   }
+
+  //Question Mark
+  const obj2 = quizQuestions.question;
+  //Question mark container element
+  const qmarkContainer = document.createElement("div");
+  for (let i = 0; i < quizQuestions.length; i++) {
+    const qmark = document.createElement("p");
+    const qmarkText = document.createTextNode("?");
+
+    qmark.appendChild(qmarkText);
+    qmarkContainer.appendChild(qmark);
+  }
+
+  quiz.appendChild(qmarkContainer);
+
+  // quizQuestions[0].question.appendChild(qmarkContainer);
 }
+
+// quiz.appendChild(qmarkContainer);
+
+console.log("hello");
+
 createTitle();
 createQuiz();
+// addQMarks();
+
+// function addQMarks(question, index) {
+//   //Question Mark
+//   const obj2 = quizQuestions.question;
+//   //Question mark container element
+//   const qmarkContainer = document.createElement("div");
+//   for (let i = 0; i < quizQuestions.length; i++) {
+//     const qmark = document.createElement("p");
+//     const qmarkText = document.createTextNode("?");
+//     const getQuestion = document.createTextNode[0].question;
+
+//     qmark.appendChild(qmarkText);
+//     qmarkContainer.appendChild(qmark);
+//     [0].question.append(qmarkContainer);
