@@ -42,10 +42,12 @@ function createQuiz() {
     const container = document.createElement("div"); //loop from here
     const question = document.createElement("p");
     const questionText = document.createTextNode(obj.question.toUpperCase());
+    const qMarks   = document.createTextNode("?");
 
     // Append Questions
     question.appendChild(questionText);
     container.appendChild(question);
+    question.appendChild(qMarks);
 
     // const quiz              = document.getElementById("quiz"); already got id earlier?
     quiz.appendChild(container);
@@ -56,28 +58,9 @@ function createQuiz() {
   }
 }
 
-function addQMarks() {
-  //Question mark container element
-  for (let i = 0; i < quizQuestions.length; i++) {
-    const obj2 = quizQuestions[0].question; //add new for loop qq.length
-
-    const qmarkContainer = document.createElement("div");
-    const qmark = document.createElement("p");
-    const qmarkText = document.createTextNode("?");
-
-    qmark.appendChild(qmarkText);
-    qmarkContainer.appendChild(qmark);
-
-    const addElementQ = document.getElementsByTagName("$0");
-
-    quiz.appendChild(qmarkContainer);
-
-    console.log(obj2[i]);
-  }
-}
 
 console.log("hello");
 
 createTitle();
 createQuiz();
-addQMarks();
+
