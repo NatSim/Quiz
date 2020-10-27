@@ -15,7 +15,6 @@ function createTitle() {
 
 function createChoices(choices, index) {
   //Linking Array items
-  // const choices = quizQuestions[0].choices;
 
   const answerContainer = document.createElement("div");
   //For Looping through answers
@@ -24,8 +23,30 @@ function createChoices(choices, index) {
     const input  = document.createElement("input");
     input.type   = "radio";
     input.name   = "question" + index;
+           
 
-    const quizQuestionMark = answer.appendChild(input); //(appended item)
+
+    //Set radio inputs individual values
+   // let i = 0;
+  
+    let ids = 0;
+    ids = input.id  =  quizQuestions.forEach((item, i) => {
+    
+      item.id = i + 1;
+ });
+
+//const ids = input.id  =   quizQuestions.forEach((o,i) => o.id=i+1);
+
+console.log(input.id)
+    
+
+
+
+
+
+
+
+    answer.appendChild(input); //(appended input element)
 
     const answerText = document.createTextNode(choices[i]);
     answer.appendChild(answerText);
@@ -40,7 +61,7 @@ function createQuiz() {
     const obj = quizQuestions[i];
     //Question Container Elements
     const container    = document.createElement("div"); //loop from here
-    const question     = document.createElement("p");
+    const question     = document.createElement("label");
     const questionText = document.createTextNode(obj.question.toUpperCase());
     const qMarks       = document.createTextNode("?");
     
@@ -61,6 +82,8 @@ function createQuiz() {
 //Create Submit button
 const submitButton = document.createElement("button");
 const buttonContent  = document.createTextNode(" Submit ");
+submitButton.type   = "button";
+submitButton.onclick="_blank"
 
 submitButton.appendChild(buttonContent);
 
@@ -69,29 +92,8 @@ const getRoot = document.getElementById("result");
 getRoot.appendChild(submitButton)
 
 
-//Picked Input Function
-
-function getCorrectAnswer() {
-  //Question& Correct Answers
-  let q1 = document.quizQuestions[0].choices[1].value;
-  let q2 = document.quizQuestions[1].choices[0].value
-  let q3 = document.quizQuestions[2].choices[0].value
-  let q4 = document.quizQuestions[3].choices[2].value
-  let q5 = document.quizQuestions[2].choices[3].value
-
-  let count       = 0;
-  let picked;
-
-  if (picked === q1 ) {
-    console.log("Correct"); true && count++;
-  } else{
-    console.log("Wrong"); false;
-  }
-
-}
-
-console.log(quizQuestions[0].answer)
-console.log(quizQuestions[0].choices[1])
+//Create Function that keeps track of score 
+//& displays the result after submission
 
 
 
@@ -100,7 +102,10 @@ console.log(quizQuestions[0].choices[1])
 
 
 }
+  
+
+
+
 
 createTitle();
 createQuiz();
-// getCorrectAnswer();
