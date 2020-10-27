@@ -23,17 +23,12 @@ function createChoices(choices, index) {
     const input  = document.createElement("input");
     input.type   = "radio";
     input.name   = "question" + index;
-           
 
-
-    //Set radio inputs individual values
-   // let i = 0;
+   
+    let idX = "tasha";
+    input.id = idX;
+    input.value = i;
   
-    let ids = 0;
-    ids = input.id  =  quizQuestions.forEach((item, i) => {
-    
-      item.id = i + 1;
- });
 
 //const ids = input.id  =   quizQuestions.forEach((o,i) => o.id=i+1);
 
