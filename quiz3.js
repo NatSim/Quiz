@@ -18,7 +18,8 @@ let totalScore = 0;
 function radioEventCreator(radio){
   radio.onchange = (e) => {
     // @todo Just to make totalScore reflect reality
-    totalScore += e.target.value  ;
+    
+    totalScore += e.target.value ++  ;
   };
 
 }
@@ -34,7 +35,7 @@ function createChoices(choices,index) {
     input.name   = "question" ;
     radioEventCreator(input);
 
-    input.id = "tasha" ;
+    input.id = "choices" ;
     if ( i == quizQuestions[index].answer) {
       input.value = 1;
     } else {

@@ -24,20 +24,20 @@ const quizQuestions = [
       "Man's not hot-Big Shaq",
       "Aint it different-Headie One ft AJ Tracey",
     ],
-    answer: 1,
+    answer: 0,
   },
 
   {
     question: "Who sang 'Crazy Baldheads'",
     choices: ["Sizzla", "Morgan Heritage", "Bob Marley", "Luciano"],
-    answer: 3,
+    answer: 2,
   },
 
   {
     question:
       "Which  rapper released an array of songs under the title 'Queens Speech",
     choices: ["Nadia Rose", "Sawaeetie", "Little Simz", "Lady Leshur"],
-    answer: 4,
+    answer: 3,
   },
 ];
 
