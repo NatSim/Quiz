@@ -12,18 +12,19 @@ function createTitle() {
     titleParent.getElementsByTagName("div")[0]
   );
 }
-function radioEventCreator(radio){ 
- 
-  
+
+let totalScore = 0;
+
+function radioEventCreator(radio){
   radio.onchange = (e) => {
-  totalScore += e.target.value  ;
+    // @todo Just to make totalScore reflect reality
+    totalScore += e.target.value  ;
   };
 
-
 }
+
 function createChoices(choices,index) {
   //Linking Array items
-
   const answerContainer = document.createElement("div");
   //For Looping through answers
   for (let i = 0; i < choices.length; i++) {
@@ -31,35 +32,16 @@ function createChoices(choices,index) {
     const input  = document.createElement("input");
     input.type   = "radio";
     input.name   = "question" ;
-    radioEventCreator(input)
-    
-   
-    // let idX = "tasha";
-    // input.id = idX;
-    // input.value = i;
-
-    total:
+    radioEventCreator(input);
 
     input.id = "tasha" ;
     if ( i == quizQuestions[index].answer) {
-    input.value = 1;
+      input.value = 1;
     } else {
-    input.value = 0;
-    } 
+      input.value = 0;
+    }
 
-
-  
-
-//const ids = input.id  =   quizQuestions.forEach((o,i) => o.id=i+1);
-
-console.log(input.id)
-    
-
-
-
-
-
-
+    // console.log(input.id)
 
     answer.appendChild(input); //(appended input element)
 
@@ -68,9 +50,9 @@ console.log(input.id)
 
     answerContainer.appendChild(answer);
   }
-
   quiz.appendChild(answerContainer);
 }
+
 function createQuiz() {
   for (let i = 0; i < quizQuestions.length; i++) {
     const obj = quizQuestions[i];
@@ -89,44 +71,23 @@ function createQuiz() {
     // const quiz              = document.getElementById("quiz"); already got id earlier?
     quiz.appendChild(container);
     
-    createChoices(obj.choices, i); //each creatQuiz iteration= createChoices is also called
-
-    
+    createChoices(obj.choices, i); //each creatQuiz iteration= createChoices is also called    
   }
 
-//Create Submit button
-const submitButton = document.createElement("button");
-const buttonContent  = document.createTextNode(" Submit ");
-submitButton.type   = "button";
-submitButton.onclick="_blank"
+  //Create Submit button
+  const submitButton = document.createElement("button");
+  const buttonContent  = document.createTextNode(" Submit ");
+  submitButton.type   = "button";
+  submitButton.onclick="_blank" 
+  submitButton.appendChild(buttonContent);
 
-submitButton.appendChild(buttonContent);
-
-const getRoot = document.getElementById("result");
-
-
-submitButton.onclick = (e) => {
-  alert ("You're score is: " + totalScore);
-};
-
-
-
-getRoot.appendChild(submitButton)
-
-
-//Create Function that keeps track of score 
-//& displays the result after submission
-
-
-
-
-
-
-
-}
+  let form = document.getElementById("quiz");
+  submitButton.onclick = (e) => {
+    alert ("You're score is: " + totalScore);
+  };
   
-
-
+  form.appendChild(submitButton);
+}
 
 
 createTitle();
