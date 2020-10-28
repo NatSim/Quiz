@@ -7,13 +7,13 @@ const quizQuestions = [
       "Wake Me Up,Avicii",
       "Next Episode,Dr.Dre ft Snoop Dogg",
     ],
-    answer: 2,
+    answer: 1,
   },
 
   {
     question: " Who sang the song, 'The Fresh Prince of JA'",
     choices: ["Tarrus Riley", "Will Smith ", "Damien Marley", "Kranium"],
-    answer: 1,
+    answer: 0,
   },
 
   {

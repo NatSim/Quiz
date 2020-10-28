@@ -12,8 +12,16 @@ function createTitle() {
     titleParent.getElementsByTagName("div")[0]
   );
 }
+function radioEventCreator(radio){ 
+ 
+  
+  radio.onchange = (e) => {
+  totalScore += e.target.value  ;
+  };
 
-function createChoices(choices, index) {
+
+}
+function createChoices(choices,index) {
   //Linking Array items
 
   const answerContainer = document.createElement("div");
@@ -22,12 +30,24 @@ function createChoices(choices, index) {
     const answer = document.createElement("p");
     const input  = document.createElement("input");
     input.type   = "radio";
-    input.name   = "question" + index;
-
+    input.name   = "question" ;
+    radioEventCreator(input)
+    
    
-    let idX = "tasha";
-    input.id = idX;
-    input.value = i;
+    // let idX = "tasha";
+    // input.id = idX;
+    // input.value = i;
+
+    total:
+
+    input.id = "tasha" ;
+    if ( i == quizQuestions[index].answer) {
+    input.value = 1;
+    } else {
+    input.value = 0;
+    } 
+
+
   
 
 //const ids = input.id  =   quizQuestions.forEach((o,i) => o.id=i+1);
@@ -83,6 +103,13 @@ submitButton.onclick="_blank"
 submitButton.appendChild(buttonContent);
 
 const getRoot = document.getElementById("result");
+
+
+submitButton.onclick = (e) => {
+  alert ("You're score is: " + totalScore);
+};
+
+
 
 getRoot.appendChild(submitButton)
 
