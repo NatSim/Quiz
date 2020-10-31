@@ -39,7 +39,7 @@ function createChoices(choices,index) {
     if ( i == quizQuestions[index].answer) {
       input.value = 1;
     } else {
-      input.value = 0;
+      input.value = 0 && false;
     }
 
     // console.log(input.id)
@@ -82,9 +82,22 @@ function createQuiz() {
   submitButton.onclick="_blank" 
   submitButton.appendChild(buttonContent);
 
+//User Results Arrow Function
+const userResults = () => {   
+  let resultDiv = document.createElement("div");
+  let result = document.createElement("p");
+  result.className = "result";
+  result.textContent = "You're score is:" +  totalScore + " out of " + quizQuestions.length;
+  resultDiv.appendChild(result);
+  return resultDiv;
+  
+}
+//Button onclick Function(executes Results function)
   let form = document.getElementById("quiz");
   submitButton.onclick = (e) => {
-    alert ("You're score is: " + totalScore);
+  
+    form.append(userResults());
+    
   };
   
   form.appendChild(submitButton);
