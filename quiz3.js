@@ -82,6 +82,13 @@ function createQuiz() {
   submitButton.onclick="_blank" 
   submitButton.appendChild(buttonContent);
 
+
+  // Onclick execute function ones
+let exitSubmit = (e) => { 
+  
+  submitButton.onclick = exitSubmit && false;
+  
+}
 //User Results Arrow Function
 const userResults = () => {   
   let resultDiv = document.createElement("div");
@@ -92,11 +99,25 @@ const userResults = () => {
   return resultDiv;
   
 }
+
+//Function to reveal which answers correct & incorrect
+// const feedbackColours = () => {
+
+//   if choices   
+// } 
+
+
+
+
+
+
+
 //Button onclick Function(executes Results function)
   let form = document.getElementById("quiz");
   submitButton.onclick = (e) => {
-  
+      
     form.append(userResults());
+    exitSubmit(); 
     
   };
   
