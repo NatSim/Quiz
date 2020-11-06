@@ -22,7 +22,7 @@ Before you continue, ensure you have met the following requirements:
 Thanks to the following people who have contributed to this project:
 
 * 🧑‍🏫 @DamienShaw
-* 🧑‍🏫 [@KernelPanicLTD](http://github.com)
+* 🧑‍🏫 @KernelPanicLTD
 
 
 
