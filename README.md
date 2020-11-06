@@ -13,7 +13,7 @@ This one page quiz includes:
 
 Before you continue, ensure you have met the following requirements:
 
-*You have a basic understanding of JavaScript Object Methods 
+* You have a basic understanding of JavaScript Object Methods 
 
 
 
