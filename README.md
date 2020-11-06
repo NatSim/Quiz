@@ -20,8 +20,8 @@ Before you continue, ensure you have met the following requirements:
 **Contributors**
 Thanks to the following people who have contributed to this project:
 
-*🧑‍🏫 @Damien Shaw
-*🧑‍🏫 @KernelPanicLTD
+* 🧑‍🏫 @DamienShaw
+* 🧑‍🏫 @KernelPanicLTD
 
 
 
