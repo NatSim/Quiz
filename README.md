@@ -18,6 +18,7 @@ Before you continue, ensure you have met the following requirements:
 
 
 **Contributors**
+
 Thanks to the following people who have contributed to this project:
 
 * 🧑‍🏫 @DamienShaw
@@ -26,4 +27,5 @@ Thanks to the following people who have contributed to this project:
 
 
 **Contact**
+
 If you want to contact me you can reach me at: **natsimbig@gmail.com**
