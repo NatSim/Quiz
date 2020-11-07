@@ -26,6 +26,6 @@ Thanks to the following people who have contributed to this project:
 
 
 
-<h4>Contact</4>
+<h4>Contact</h4>
 
 If you want to contact me you can reach me at: **natsimbig@gmail.com**
