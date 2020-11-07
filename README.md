@@ -21,7 +21,7 @@ Before you continue, ensure you have met the following requirements:
 
 Thanks to the following people who have contributed to this project:
 
-* 🧑‍🏫 @DamienShaw
+* 🧑‍🏫 @shawsy171
 * 🧑‍🏫 @KernelPanicLTD
 
 
