@@ -9,7 +9,7 @@ This one page quiz includes:
 
 
 
-**Prerequisites**
+<h2>Prerequisites</h2>
 
 Before you continue, ensure you have met the following requirements:
 
@@ -17,7 +17,7 @@ Before you continue, ensure you have met the following requirements:
 
 
 
-**Contributors**
+<h3>Contributors</h3>
 
 Thanks to the following people who have contributed to this project:
 
@@ -26,6 +26,6 @@ Thanks to the following people who have contributed to this project:
 
 
 
-**Contact**
+<h4>Contact</4>
 
 If you want to contact me you can reach me at: **natsimbig@gmail.com**
