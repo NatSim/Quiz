@@ -36,8 +36,9 @@ function createChoices(choices,index) {
   const answerContainer = document.createElement("div");
   //For Looping through answers
   for (let i = 0; i < choices.length; i++) {
-    const answer = document.createElement("p");
+    const answer = document.createElement("label");
     const input  = document.createElement("input");
+    const lineBreak = document.createElement("br");
     input.type   = "radio";
     input.name   = "question" + index ;
     input.value = DEFAULT_VALUE;
@@ -51,9 +52,10 @@ function createChoices(choices,index) {
     // else {
     //   input.value = 0;
     // }
-
+    answer.appendChild(lineBreak);
     answer.appendChild(input); //(appended input element)
-
+   
+   
     const answerText = document.createTextNode(choices[i]);
     answer.appendChild(answerText);
 
@@ -67,7 +69,7 @@ function createQuiz() {
     const questionObj = quizQuestions[i];
     //Question Container Elements
     const container    = document.createElement("div"); //loop from here
-    const question     = document.createElement("label");
+    const question     = document.createElement("p");
     const questionText = document.createTextNode(questionObj.question.toUpperCase());
     const qMarks       = document.createTextNode("?");
   
