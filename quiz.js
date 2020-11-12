@@ -1,5 +1,4 @@
 import quizQuestions from "./quiz_questions.js";
-console.log(quizQuestions);
 
 function createTitle() {
   //Quiz Title- append to root
@@ -18,14 +17,14 @@ let totalScore = 0;
 function radioEventCreator(radio){
   radio.onchange = (e) => {
     // totalScore reflect reality
-    
+
     totalScore += parseInt(e.target.value, 10);
   };
 
 }
 /**
  * createChoices
- * 
+ *
  * this creates choices for the quiz
  * @params {string[]} choices - The answer choices
  * @params {number} index - This is the question index
@@ -48,14 +47,14 @@ function createChoices(choices,index) {
     if ( i === quizQuestions[index].answer) {
       input.value = 1;
     }
-    
+
     // else {
     //   input.value = 0;
     // }
     answer.appendChild(lineBreak);
     answer.appendChild(input); //(appended input element)
-   
-   
+
+
     const answerText = document.createTextNode(choices[i]);
     answer.appendChild(answerText);
 
@@ -72,16 +71,16 @@ function createQuiz() {
     const question     = document.createElement("p");
     const questionText = document.createTextNode(questionObj.question.toUpperCase());
     const qMarks       = document.createTextNode("?");
-  
+
 
     // Append Question Elements
     question.appendChild(questionText);
     question.appendChild(qMarks);
     container.appendChild(question);
 
-    
+
     quiz.appendChild(container);
-    
+
     createChoices(questionObj.choices, i); //each creatQuiz iteration= createChoices is also called
   }
 
@@ -93,55 +92,63 @@ function createQuiz() {
 
 
   // Onclick execute function onces only
-  let exitSubmit = (e) => { 
+  let exitSubmit = (e) => {
     submitButton.onclick = false;
   }
 
   //User Results Arrow Function
-  const userResults = () => {   
+  const userResults = () => {
     let resultDiv = document.createElement("div");
     let result = document.createElement("p");
     result.className = "result";
     result.textContent = "You're score is:" +  totalScore + " out of " + quizQuestions.length;
     resultDiv.appendChild(result);
     return resultDiv;
-    
+
   }
   console.log();
 
   function highlightSelectedChoices(questionNumber){
-    const choices = document.getElementsByName("question0");
+    
+    for(let questionI = 0; questionI < quizQuestions.length; questionI++){
+      const currentQuestion = quizQuestions[questionI];
+      // console.log(currentQuestion.question);
 
-    for(let i = 0; i < choices.length; i++) {
-      const currentChoice = choices[i];
-
-      if(currentChoice.checked) {
-        // change 0 the use the current question
-        console.log(i, quizQuestions[0].answer);
-        if(i === quizQuestions[0].answer) {
-
+      const choices = document.getElementsByName("question" + questionI);
+  
+      for(let i = 0; i < choices.length; i++) {
+        const currentChoice = choices[i];
+  
+        if(currentChoice.checked) {
+          console.log(currentChoice);
+  
           // set styling to the correct color
-          console.log('input turns green');
-        } else {
-          console.log('input turns red')
+          if(i === currentQuestion.answer) {
+            currentChoice.parentNode.classList.add("correct");
+  
+          } else {
+            currentChoice.parentNode.classList.add("incorrect");
+          }
+  
+  
+          break;
         }
-
-
-        break;
       }
     }
-  }
- 
   
+    
+  }
+
+
   //Button onclick Function(executes Results function)
   let form = document.getElementById("quiz");
   submitButton.onclick = (e) => {
     form.append(userResults());
     highlightSelectedChoices();
-    exitSubmit(); 
-    
+    exitSubmit();
+
   };
-  
+
   form.appendChild(submitButton);
 }
 
