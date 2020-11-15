@@ -37,7 +37,7 @@ function createChoices(choices,index) {
   for (let i = 0; i < choices.length; i++) {
     const answer = document.createElement("label");
     const input  = document.createElement("input");
-    const lineBreak = document.createElement("br");
+    // const lineBreak = document.createElement("br");
     input.type   = "radio";
     input.name   = "question" + index ;
     input.value = DEFAULT_VALUE;
@@ -51,7 +51,7 @@ function createChoices(choices,index) {
     // else {
     //   input.value = 0;
     // }
-    answer.appendChild(lineBreak);
+    // answer.appendChild(lineBreak);
     answer.appendChild(input); //(appended input element)
 
 
@@ -129,7 +129,6 @@ function createQuiz() {
           } else {
             currentChoice.parentNode.classList.add("incorrect");
           }
-  
   
           break;
         }

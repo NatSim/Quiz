@@ -7,6 +7,11 @@ body {
   padding: 30px;
 }
 
+/* list display?!? */
+label {
+  display: block;
+}
+
 button {
   background-color: black;
   color: white;
