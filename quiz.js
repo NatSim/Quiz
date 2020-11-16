@@ -33,25 +33,23 @@ function createChoices(choices,index) {
   const DEFAULT_VALUE = 0;
   //Linking Array items
   const answerContainer = document.createElement("div");
-  //For Looping through answers
+  answerContainer.id = 'choice' + index ;
+
+  //For Looping through choices
   for (let i = 0; i < choices.length; i++) {
-    const answer = document.createElement("label");
+    const answer = document.createElement("label"); //accessibility
     const input  = document.createElement("input");
-    // const lineBreak = document.createElement("br");
+
     input.type   = "radio";
     input.name   = "question" + index ;
     input.value = DEFAULT_VALUE;
     radioEventCreator(input);
 
-    // Statement to set value to 1 for correct answers
+    // Statement to set value to 1 for correct answers(choice)
     if ( i === quizQuestions[index].answer) {
       input.value = 1;
     }
 
-    // else {
-    //   input.value = 0;
-    // }
-    // answer.appendChild(lineBreak);
     answer.appendChild(input); //(appended input element)
 
 
@@ -85,8 +83,8 @@ function createQuiz() {
   }
 
   //Create Submit button
-  const submitButton = document.createElement("button");
-  const buttonContent  = document.createTextNode(" Submit ");
+  const submitButton  = document.createElement("button");
+  const buttonContent = document.createTextNode(" Submit ");
   submitButton.type   = "button";
   submitButton.appendChild(buttonContent);
 
@@ -98,46 +96,53 @@ function createQuiz() {
 
   //User Results Arrow Function
   const userResults = () => {
-    let resultDiv = document.createElement("div");
-    let result = document.createElement("p");
-    result.className = "result";
-    result.textContent = "You're score is:" +  totalScore + " out of " + quizQuestions.length;
+    let resultDiv     = document.createElement("div");
+    let result        = document.createElement("p");
+    result.className  = "result";
+    result.textContent= "You're score is: " +  totalScore + " out of " + quizQuestions.length; //String concatanaetion
     resultDiv.appendChild(result);
     return resultDiv;
 
   }
-  console.log();
+
+  function revealAnswer (questionI, answerString) {
+    const choiceNode = document.getElementById("choice" + questionI);
+    const answerText = document.createTextNode(`The correct answer is: ${answerString}`)
+    choiceNode.appendChild(answerText);
+  }
 
   function highlightSelectedChoices(questionNumber){
-    
+
     for(let questionI = 0; questionI < quizQuestions.length; questionI++){
       const currentQuestion = quizQuestions[questionI];
       // console.log(currentQuestion.question);
 
       const choices = document.getElementsByName("question" + questionI);
-  
+
       for(let i = 0; i < choices.length; i++) {
         const currentChoice = choices[i];
-  
+
         if(currentChoice.checked) {
           console.log(currentChoice);
-  
-          // set styling to the correct color
+
+          // set styling to the correct color(conditional)
           if(i === currentQuestion.answer) {
             currentChoice.parentNode.classList.add("correct");
-  
+
           } else {
-            currentChoice.parentNode.classList.add("incorrect");
+            currentChoice.parentNode.classList.add("incorrect")
+            const answerString = currentQuestion.choices[currentQuestion.answer];
+            revealAnswer(questionI, answerString)
           }
-  
+
+
           break;
         }
       }
     }
-  
-    
-  }
 
+
+  }
 
   //Button onclick Function(executes Results function)
   let form = document.getElementById("quiz");
@@ -154,3 +159,4 @@ function createQuiz() {
 
 createTitle();
 createQuiz();
+
